@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Webpage Title -->
+        <title>O.BO Project</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script>
+
+        </script>
+
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            .button {
+                background: coral;
+                padding: 1em 2em;
+                color: #fff;
+                border: 0;
+            }
+
+            .button:hover {
+                background: #333;
+            }
+
+            .modal {
+                /*display: none;*/
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            .container {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="modal" id="demo modal">
+            <div class="modal-dialog">
+                <div class="model-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Please confirm! </h2>
+                        <button type="button" class="close"><span>&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>This is the modal body, do you like it?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Alerts &amp; Modal</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="alert alert-success alert-dismissable fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h2 class="alert-heading">This is an alert!</h2>
+                    <p>I'm an alert!
+                        <a href="#" class="alert-link">Click me!</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" class="btn btn-primary" data-toggle = "modal"></button>
+            </div>
+        </div>
+    </body>
+</html>
