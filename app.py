@@ -62,9 +62,9 @@ def make_new_room():
 
 @app.route('/shownewroom', methods=['GET'])
 def show_new_room():
-    return render_template('obo_project.html')
+    # return render_template('obo_project.html')
     result = list(db.lectures.find({}, {'_id': 0}))
-    return jsonify({'result': 'success', 'msg': '이 요청은 GET!'})
+    return jsonify({'result': 'success', 'lectures': result})
 
 
 if __name__ == '__main__':
