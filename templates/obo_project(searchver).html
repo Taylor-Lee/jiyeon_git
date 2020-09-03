@@ -12,9 +12,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous"></script>
         <!-- JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -141,6 +147,7 @@
 
             .btn-outline-secondary {
                 margin-left: 120px;
+                margin-bottom : 20px;
             }
 
             .lectures {
@@ -150,8 +157,14 @@
                 margin-right: 265px;
             }
 
+            .modal-body {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 12px;
+            }
+
             .card {
                 width: 200px;
+                border-color : darkgray;
             }
 
             .input-group {
@@ -162,45 +175,10 @@
                 font-size: 14px;
             }
 
-            .popup {
-                position: fixed;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: 500px;
-                height: 500px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-                background: #fff;
-                border-radius: 5px;
-                text-align: right;
-                padding: 20px;
-                box-sizing: border-box;
-                opacity: 0;
-                transition: all 0.5s;
-                z-index: 5;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 14px;
-            }
-
-            .popup:target {
-                opacity: 1;
-            }
-
-            .popup:target + .dim {
-                opacity: 1;
-                z-index: 2;
-            }
-
-            .dim {
-                position: fixed;
-                left: 0;
-                top: 0;
-                z-index: -1;
+            .card-img-top {
                 width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.6);
-                opacity: 0;
-                transition: all 0.5s;
+                height: 15vw;
+                object-fit: cover;
             }
 
         </style>
@@ -226,15 +204,15 @@
             })
 
             function showModal() {
-              $('#exampleModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) // Button that triggered the modal
-                var recipient = button.data('whatever') // Extract info from data-* attributes
-                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                var modal = $(this)
-                modal.find('.modal-title').text('New message to ' + recipient)
-                modal.find('.modal-body input').val(recipient)
-              })
+                $('#exampleModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget) // Button that triggered the modal
+                    var recipient = button.data('whatever') // Extract info from data-* attributes
+                    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                    var modal = $(this)
+                    modal.find('.modal-title').text('New message to ' + recipient)
+                    modal.find('.modal-body input').val(recipient)
+                })
             }
         </script>
     </head>
@@ -285,13 +263,16 @@
                         <img src="https://i.pinimg.com/originals/fc/ac/77/fcac77d80eb13abd85b54b33036e10de.png"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">[메가스터디][한국지리]<br>2021 수능대비 이것이 개념이다 (이기상 선생님)
+                            <h5 class="card-title">[메가스터디][한국지리]<br>2021 수능대비 이것이 개념이다 <br>(이기상 선생님)
                             </h5>
                             <h6 class="card-text" font-size : 10px>방지기 한마디 : "고3분들! 지리 함께해요!"</h6>
                         </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">방 탐색하기</button>
-
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
                     </div>
+
                     <div class="card">
                         <img src="https://gscdn.hackers.co.kr/ecpa/img/exam_guide/type2/img_tab_9_1.jpg"
                              class="card-img-top" alt="...">
@@ -299,7 +280,10 @@
                             <h5 class="card-title">[해커스][회계사]<br>회계사 객관식 재무회계 (김원종 교수님)</h5>
                             <h6 class="card-text" font-size : 10px>방지기 한마디 : "자격증 꼭 취득하실 분들만 참여 부탁드립니다!!"</h6>
                         </div>
-                        <a href="#pop1" class="btn btn-outline-secondary"> 방 탐색하기</a>
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
                     </div>
                     <div class="card">
                         <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
@@ -308,55 +292,66 @@
                             <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
                             <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
                         </div>
-                        <a href="#pop1" class="btn btn-outline-secondary"> 방 탐색하기</a>
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
                     </div>
                     <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
+                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/103624_20190812122613493.jpg"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
+                            <h5 class="card-title">[커넥츠][영어스피킹] <br> 조정현의 디즈니 OST 영어 <br>(조정현 선생님)</h5>
+                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "디즈니로 영어 공부 함께해요!"</h6>
                         </div>
-                        <a href="#pop1" class="btn btn-outline-secondary"> 방 탐색하기</a>
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
                     </div>
-                    <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
-                        </div>
-                        <a href="#pop1" class="btn btn-outline-secondary"> 방 탐색하기</a>
 
-                    </div>
                     <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
+                        <img src="https://cdn.class101.net/images/0aa92fbb-3afd-43d6-9746-b8bc5f2221f9/2048xauto.webp"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
+                            <h5 class="card-title">[Class101][미술]<br>인체 드로잉, 사람을 이해하고 마음을 그리다 (소은 튜터님)</h5>
+                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "Class101 하며 먼저 포기 말아요!"</h6>
                         </div>
-                        <button onclick="showModal()" class="btn btn-outline-secondary"> 방 탐색하기</button>
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <img src="http://image.ebsi.co.kr/images/teacher_new/2020/home/T0089.png"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">[EBSi][한국사]<br>최태성의 개정 고급 한국사 <br> (최태성 선생님)</h5>
+                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "태성쌤의 가르침을 받아보아요!"</h6>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                data-target="#exampleModal"
+                                data-whatever="@mdo">방 탐색하기
+                        </button>
                     </div>
                 </div>
             </div>
 
 
-            <div class="popup" id="pop1">
-                <a href="#a">닫기</a>
-            </div>
+            <!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
+            <!--                    data-whatever="@fat">Open modal for @fat-->
+            <!--            </button>-->
+            <!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
+            <!--                    data-whatever="@getbootstrap">Open modal for @getbootstrap-->
+            <!--            </button>-->
 
-            <div class="dim"></div>
-
-
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Online but Offline</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -364,11 +359,11 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="purchase_proof" class="col-form-label">강의 구매 내역 인증하기</label>
+                                    <input type="text" class="form-control" id="purchase_proof">
                                 </div>
                                 <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Message:</label>
+                                    <label for="message-text" class="col-form-label">다짐글 한마디</label>
                                     <textarea class="form-control" id="message-text"></textarea>
                                 </div>
                             </form>
@@ -380,11 +375,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button>
         </div>
     </body>
 </html>

@@ -1,255 +1,252 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Webpage Title -->
-        <title>O.BO Project</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-        <!-- 구글폰트 -->
-        <style type="text/css">
-            .wrap {
-                width: 1600px;
-                margin: auto;
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Webpage Title -->
+    <title>O.BO Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <style type="text/css">
+        .wrap {
+            width: 1600px;
+            margin: auto;
+        }
+
+        body {
+            font-family: 'Schoolbell', cursive;
+            font-size: 40px;
+            color: black;
+        }
+
+        .container {
+            width: 1440px;
+            margin: 0 auto;
+        }
+
+        header {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header > h2 {
+            margin-left: 20px;
+        }
+
+        header > nav {
+            width: 600px;
+            height: 100%;
+        }
+
+        header ul {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        header ul > li {
+            font-size: 16px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        * {
+            letter-spacing: -1px
+        }
+
+        .menu {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-family: 'Noto Sans KR', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .introduction {
+            color: #000;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        a:link {
+            color: black;
+        }
+
+        a:visited {
+            color: black;
+        }
+
+        a:active {
+            color: black;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .img1 {
+            background-image: url('https://cdn.pixabay.com/photo/2015/09/09/19/56/office-932926_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 1100px;
+            height: 300px;
+            box-sizing: border-box;
+            margin-left: 230px;
+            margin-right: 210px;
+        }
+
+        .lectures {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 10px;
+            margin-left: 230px;
+            margin-right: 265px;
+        }
+
+        .final_lectures {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 10px;
+            margin-left: 230px;
+            margin-right: 260px;
+        }
+
+        #cards-box {
+            width: 100%;
+        }
+
+        .card-columns {
+            column-count: 1;
+        }
+
+        /*.card-img-top {*/
+        /*    width: 100%;*/
+        /*    height: 15vw;*/
+        /*    object-fit: cover;*/
+        /*}*/
+
+        /*.card {*/
+        /*    width: 200px;*/
+        /*    border-color: darkgray;*/
+        /*}*/
+
+    </style>
+
+    <script>
+      <!--로딩 후 자동으로-->
+      $(document).ready(function () {
+        $("#lectures").html("");
+        show_new_room();
+      });
+
+      function show_new_room() {
+        $.ajax({
+          type: "GET",
+          url: "/shownewroom",
+          data: {},
+          success: function (response) {
+            if (response["result"] == "success") {
+              let lectures = response["lectures"];
+              console.log(lectures);
+              for (let i = 0; i < lectures.length; i++) {
+                makeCard(lectures[i]['lecture_image'], lectures[i]['lecture_name'], lectures[i]['lecturer_name'],
+                  lectures[i]['owner_short_comment'])
+              }
             }
+          }
+        })
+      }
 
-            body {
-                font-family: 'Schoolbell', cursive;
-                font-size: 40px;
-                color: black;
-            }
-
-            .container {
-                width: 1440px;
-                margin: 0 auto;
-            }
-
-            header {
-                width: 100%;
-                height: 80px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            header > h2 {
-                margin-left: 20px;
-            }
-
-            header > nav {
-                width: 600px;
-                height: 100%;
-            }
-
-            header ul {
-                width: 90%;
-                height: 100%;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            header ul > li {
-                font-size: 16px;
-                height: 100%;
-                display: flex;
-                align-items: center;
-            }
-
-            * {
-                letter-spacing: -1px
-            }
-
-            .menu {
-                margin: 0;
-                padding: 0;
-                color: #000;
-                font-family: 'Noto Sans KR', sans-serif;
-                box-sizing: border-box;
-            }
-
-            .introduction {
-                color: #000;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 18px;
-                text-align: center;
-            }
-
-            ul {
-                list-style: none;
-            }
-
-            a {
-                text-decoration: none;
-                outline: none;
-            }
-
-            a:link {
-                color: black;
-            }
-
-            a:visited {
-                color: black;
-            }
-
-            a:active {
-                color: black;
-            }
-
-            a:hover {
-                color: black;
-            }
-
-            .img1 {
-                background-image: url('https://cdn.pixabay.com/photo/2015/09/09/19/56/office-932926_1280.jpg');
-                background-size: cover;
-                background-position: center;
-                width: 1100px;
-                height: 300px;
-                box-sizing: border-box;
-                margin-left: 230px;
-                margin-right: 210px;
-            }
-
-            .lectures {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 10px;
-                margin-left: 230px;
-                margin-right: 265px;
-            }
-
-            .final_lectures {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 10px;
-                margin-left: 230px;
-                margin-right: 260px;
-            }
-
-            #cards-box {
-                width: 100%;
-            }
-
-        </style>
-
-        <script>
-            <!--로딩 후 자동으로-->
-            $(document).ready(function () {
-                $("#lectures").html("");
-                show_new_room();
-            });
-
-            function show_new_room() {
-                $.ajax({
-                    type: "GET",
-                    url: "/shownewroom",
-                    data: {},
-                    success: function (response) {
-                        if (response["result"] == "success") {
-                            let lectures = response["lectures"];
-                            console.log(lectures);
-                            for (let i = 0; i < lectures.length; i++) {
-                                makeCard(lectures[i]['lecture_image'], lectures[i]['lecture_name'], lectures[i]['lecturer_name'],
-                                    lectures[i]['owner_short_comment'])
-                            }
-                        }
-                    }
-                })
-            }
-
-            function makeCard(lecture_image, lecture_name, lecturer_name, owner_short_comment) {
-                let tempHtml = `<div class="card">
+      function makeCard(lecture_image, lecture_name, lecturer_name, owner_short_comment) {
+        let tempHtml = `<div class="card">
                         <img class="card-img-top" src="${lecture_image}" alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">${lecture_name} "(${lecturer_name})"</h5>
                         <h6 class="card-text" font-size : 10px>"방지기 한마디 : " ${owner_short_comment}</h6>
                                </div>
                                </div>`;
-                $("#cards-box").append(tempHtml);
-            }
-        </script>
-    </head>
+        $("#cards-box").append(tempHtml);
+      }
+    </script>
+</head>
 
-    <body>
-        <div class="wrap">
-            <div class="container">
-                <header>
-                    Online but Offline
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="/">홈</a></li>
-                            <li><a href="/makver">방 만들기</a></li>
-                            <li><a href="/searchver">방 찾기</a></li>
-                            <li><a href="/">참여방 보기</a></li>
-                            <li><a href="/">로그인</a></li>
-                            <li><a href="/">로그아웃</a></li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>
-            <div class="img1"></div>
-            <div class="img2"></div>
-            <p></p>
-            <div class="introduction">
-                <p>혼자 듣기 어려운 인터넷 강의, <br>
-                    누군가도 똑같은 고민을 하고 있습니다!
-                <p>함께 듣고 있는 친구를 찾아보세요!</p>
-                <p>
-                </p>
-                <br>
-            </div>
-            <div class="lectures">
-                <div id="cards-box" class="card-columns">
+<body>
+<div class="wrap">
+    <div class="container">
+        <header>
+            Online but Offline
+            <nav class="menu">
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/makver">방 만들기</a></li>
+                    <li><a href="/searchver">방 찾기</a></li>
+                    <li><a href="/">참여방 보기</a></li>
+                    <li><a href="/">로그인</a></li>
+                    <li><a href="/">로그아웃</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="img1"></div>
+    <div class="img2"></div>
+    <p></p>
+    <div class="introduction">
+        <p>혼자 듣기 어려운 인터넷 강의, <br>
+            누군가도 똑같은 고민을 하고 있습니다!
+        <p>함께 듣고 있는 친구를 찾아보세요!</p>
+        <p>
+        </p>
+        <br>
+    </div>
+    <div class="lectures">
+        <div id="cards-box" class="card-columns">
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://i.pinimg.com/originals/fc/ac/77/fcac77d80eb13abd85b54b33036e10de.png"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">[메가스터디][한국지리]<br>2021 수능대비 이것이 개념이다 (이기상 선생님)
+                            <h5 class="card-title">[메가스터디][한국지리]<br>2021 수능대비 이것이 개념이다 <br>(이기상 선생님)
                             </h5>
                             <h6 class="card-text" font-size : 10px>방지기 한마디 : "고3분들! 지리 함께해요!"</h6>
                         </div>
                     </div>
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://gscdn.hackers.co.kr/ecpa/img/exam_guide/type2/img_tab_9_1.jpg"
                              class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">[해커스][회계사]<br>회계사 객관식 재무회계 (김원종 교수님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "자격증 꼭 취득하실 분들만 참여 부탁드립니다!!"</h6>
+                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "자격증 꼭 취득하실 분들만!!"</h6>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
-                             class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
-                            <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
-                        </div>
-                    </div>
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
                              class="card-img-top" alt="...">
@@ -260,6 +257,34 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="card">
+                    <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/103624_20190812122613493.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">[커넥츠][영어스피킹] <br> 조정현의 디즈니 OST 영어 <br>(조정현 선생님)</h5>
+                        <h6 class="card-text" font-size : 10px>방지기 한마디 : "디즈니로 영어 공부 함께해요!"</h6>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.class101.net/images/0aa92fbb-3afd-43d6-9746-b8bc5f2221f9/2048xauto.webp"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">[Class101][미술]<br>인체 드로잉, 사람을 이해하고 마음을 그리다 (소은 튜터님)</h5>
+                        <h6 class="card-text" font-size : 10px>방지기 한마디 : "Class101 하며 먼저 포기 말아요!"</h6>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="http://image.ebsi.co.kr/images/teacher_new/2020/home/T0089.png"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">[EBSi][한국사]<br>최태성의 개정 고급 한국사 <br> (최태성 선생님)</h5>
+                        <h6 class="card-text" font-size : 10px>방지기 한마디 : "태성쌤의 가르침을 받아보아요!"</h6>
+                    </div>
+                </div>
+            </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
