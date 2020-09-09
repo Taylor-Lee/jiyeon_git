@@ -15,7 +15,7 @@ def home():
 
 @app.route('/makver')
 def makver():
-    return render_template('obo_project(makver).html')
+    return render_template('obo_project(makver)2.html')
 
 
 @app.route('/searchver')
@@ -46,7 +46,7 @@ def make_new_room():
     lectures = {
         'lecture_name': lecture_name_receive,
         'lecturer_name': lecturer_name_receive,
-        'lecture_image' : lecture_image_receive,
+        'lecture_image': lecture_image_receive,
         'lecture_category': lecture_category_receive,
         'mate_number': mate_number_receive,
         'lecture_link': lecture_link_receive,
@@ -58,6 +58,25 @@ def make_new_room():
     lectures = list(db.lectures.find({'_id': False}))
     # 성공 여부 & 성공 메시지 반환
     return jsonify({'result': 'success', 'all_lectures': 'lectures', 'msg': '방이 성공적으로 생성되었습니다!'})
+
+
+@app.route('/enternewroom', methods=['POST'])
+def enter_new_room():
+    # purchase_proof_picture (구매 내역 인증 사진)
+    purchase_proof_receive = request.form['purchase_proof_give']
+    # participant_long_comment (참여자 한 마디)
+    participant_long_comment_receive = request.form['participant_long_comment_give']
+
+    # DB에 삽입할 participant_data 만들기
+    participant_data = {
+        'purchase_proof': purchase_proof_receive,
+        'participant_long_comment': participant_long_comment_receive
+    }
+
+    db.participant.insert_one(participant_data)
+    lectures = list(db.participant_data.find({'_id': False}))
+    # 성공 여부 & 성공 메시지 반환
+    return jsonify({'result': 'success', 'all_participant_data': 'participant_data', 'msg': '성공적으로 신청되었습니다!'})
 
 
 @app.route('/shownewroom', methods=['GET'])

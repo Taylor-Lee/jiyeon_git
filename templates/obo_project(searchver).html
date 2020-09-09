@@ -1,264 +1,367 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Webpage Title -->
-        <title>O.BO Project</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-                crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-                crossorigin="anonymous"></script>
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-        <!-- 구글폰트 -->
-        <style type="text/css">
-            .wrap {
-                width: 1600px;
-                margin: auto;
-            }
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Webpage Title -->
+    <title>O.BO Project</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
+<!--            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
+<!--            crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"-->
+<!--            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"-->
+<!--            crossorigin="anonymous"></script>-->
+    <!-- JS -->
 
-            * {
-                letter-spacing: -1px
-            }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 
-            body {
-                font-family: 'Schoolbell', cursive;
-                font-size: 40px;
-                color: black;
-            }
+    <!-- 구글폰트 -->
+    <style type="text/css">
+        .wrap {
+            width: 1600px;
+            margin: auto;
+        }
 
-            .container {
-                width: 1440px;
-                margin: 0 auto;
-            }
+        * {
+            letter-spacing: -1px
+        }
 
-            header {
-                width: 100%;
-                height: 80px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+        body {
+            font-family: 'Schoolbell', cursive;
+            font-size: 40px;
+            color: black;
+        }
 
-            header > h2 {
-                margin-left: 20px;
-            }
+        .container {
+            width: 1440px;
+            margin: 0 auto;
+        }
 
-            header > nav {
-                width: 600px;
-                height: 100%;
-            }
+        header {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-            header ul {
-                width: 90%;
-                height: 100%;
-                display: flex;
-                justify-content: space-between;
-            }
+        header > h2 {
+            margin-left: 20px;
+        }
 
-            header ul > li {
-                font-size: 16px;
-                height: 100%;
-                display: flex;
-                align-items: center;
-            }
+        header > nav {
+            width: 600px;
+            height: 100%;
+        }
 
-            .menu {
-                margin: 0;
-                padding: 0;
-                color: #000;
-                font-family: 'Noto Sans KR', sans-serif;
-                box-sizing: border-box;
-            }
+        header ul {
+            width: 90%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
 
-            .introduction {
-                color: #000;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 24px;
-                text-align: center;
-                font-type: bold
-            }
+        header ul > li {
+            font-size: 16px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
 
-            ul {
-                list-style: none;
-            }
+        .menu {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-family: 'Noto Sans KR', sans-serif;
+            box-sizing: border-box;
+        }
 
-            a {
-                text-decoration: none;
-                outline: none;
-            }
+        .introduction {
+            color: #000;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            font-type: bold
+        }
 
-            a:link {
-                color: black;
-            }
+        ul {
+            list-style: none;
+        }
 
-            a:visited {
-                color: black;
-            }
+        a {
+            text-decoration: none;
+            outline: none;
+        }
 
-            a:active {
-                color: black;
-            }
+        a:link {
+            color: black;
+        }
 
-            a:hover {
-                color: black;
-            }
+        a:visited {
+            color: black;
+        }
 
-            .img1 {
-                background-image: url('https://cdn.pixabay.com/photo/2016/02/18/22/18/picnic-1208229_1280.jpg');
-                background-size: cover;
-                background-position: center;
-                width: 1100px;
-                height: 300px;
-                box-sizing: border-box;
-                margin-left: 230px;
-                margin-right: 210px;
-            }
+        a:active {
+            color: black;
+        }
 
-            .button {
-                font-family: 'Noto Sans KR', sans-serif;
-                text-align: center;
-            }
+        a:hover {
+            color: black;
+        }
 
-            .btn-post-box {
-                font-family: 'Noto Sans KR', sans-serif;
-                text-align: center;
-                width: 800px;
-                align-items: center;
-                margin: 0 auto;
-                font-size: 14px;
-            }
+        .img1 {
+            background-image: url('https://cdn.pixabay.com/photo/2016/02/18/22/18/picnic-1208229_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 1100px;
+            height: 300px;
+            box-sizing: border-box;
+            margin-left: 230px;
+            margin-right: 210px;
+        }
 
-            .btn-outline-secondary {
-                margin-left: 120px;
-                margin-bottom : 20px;
-            }
+        .button {
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+        }
 
-            .lectures {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 10px;
-                margin-left: 230px;
-                margin-right: 265px;
-            }
+        .btn-post-box {
+            font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
+            width: 800px;
+            align-items: center;
+            margin: 0 auto;
+            font-size: 14px;
+        }
 
-            .modal-body {
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 12px;
-            }
+        .btn-outline-secondary {
+            margin-left: 120px;
+            margin-bottom: 20px;
+        }
 
-            .card {
-                width: 200px;
-                border-color : darkgray;
-            }
+        .lectures {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 10px;
+            margin-left: 230px;
+            margin-right: 265px;
+        }
 
-            .input-group {
-                width: 800px;
-                align-items: center;
-                margin: 0 auto;
-                font-family: 'Noto Sans KR', sans-serif;
-                font-size: 14px;
-            }
+        .modal-body {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 15px;
+            width: 100%
+        }
 
-            .card-img-top {
-                width: 100%;
-                height: 15vw;
-                object-fit: cover;
-            }
+        .modal-footer {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 15px;
+        }
 
-        </style>
-        <script>
-            function openClose() {
-                // id 값 post-box의 display 값이 block 이면(= 눈에 보이면)
-                if ($('#btn-post-box').css('display') == 'block') {
-                    // post-box를 가리고
-                    $('#btn-post-box').hide();
-                    // 다시 버튼을 클릭하면, 박스 열기를 할 수 있게 텍스트 바꿔두기
-                    $('#btn-dark btn-lg').text('방 찾기');
-                } else {
-                    // 아니면(눈에 보이지 않으면) post-box를 펴라
-                    $('#btn-post-box').show();
-                    // 다시 버튼을 클릭하면, 박스 닫기를 할 수 있게 텍스트 바꿔두기
+        .card {
+            height: auto;
+            border-color: darkgray;
+        }
+
+        .input-group {
+            width: 800px;
+            align-items: center;
+            margin: 0 auto;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 14px;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
+
+        .card-columns {
+            column-count: 1;
+        }
+    </style>
+
+    <script>
+      function openClose() {
+        // id 값 post-box의 display 값이 block 이면(= 눈에 보이면)
+        if ($('#btn-post-box').css('display') == 'block') {
+          // post-box를 가리고
+          $('#btn-post-box').hide();
+          // 다시 버튼을 클릭하면, 박스 열기를 할 수 있게 텍스트 바꿔두기
+          $('#btn-dark btn-lg').text('방 찾기');
+        } else {
+          // 아니면(눈에 보이지 않으면) post-box를 펴라
+          $('#btn-post-box').show();
+          // 다시 버튼을 클릭하면, 박스 닫기를 할 수 있게 텍스트 바꿔두기
+        }
+      }
+
+      $(document).ready(function () {
+        $("#wrap").keyup(function () {
+          var k = $(this).val();
+        })
+
+        show_new_room();
+
+        // $(".btn-outline-secondary").click(function(){
+        //   $("#exampleModal").modal("show");
+        // });
+        $("#exampleModal").on('show.bs.modal', function () {
+          alert('The modal will be displayed now!');
+        });
+      });
+
+      // $(document).on('show.bs.modal','#myModal', function () {
+      //   alert('hi');
+      // })
+      //
+      // $('#exampleModal').on('show.bs.modal', function (event) {
+      //   console.log('들어오나요?? 정말로???');
+      //
+      //   // var button = $(event.relatedTarget) // Button that triggered the modal
+      //   // var recipient = button.data('whatever') // Extract info from data-* attributes
+      //   // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      //   // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      //   // var modal = $(this)
+      //   // modal.find('.modal-title').text('New message to ' + recipient)
+      //   // modal.find('.modal-body input').val(recipient)
+      // });
+
+      function show_new_room() {
+        $.ajax({
+          type: "GET",
+          url: "/shownewroom",
+          data: {},
+          success: function (response) {
+            if (response["result"] == "success") {
+              let lectures = response["lectures"];
+
+              const maxCard = 3;
+              let rowHtml = `<div class="row">`;
+              for (let i = 0; i < lectures.length; i++) {
+                let cardHtml = makeCard(lectures[i]['lecture_image'], lectures[i]['lecture_name'], lectures[i]['lecturer_name'], lectures[i]['owner_short_comment']);
+                rowHtml = rowHtml + cardHtml;
+                if ((i + 1) % maxCard == 0) {
+                  rowHtml = rowHtml + "</div>";
+                  $("#cards-box").append(rowHtml);
+                  rowHtml = `<div class="row">`;
                 }
+              }
+
+              if (rowHtml !== `<div class="row">`) {
+                rowHtml = rowHtml + "</div>";
+                $("#cards-box").append(rowHtml);
+              }
             }
+          }
+        })
+      }
 
-            $(document).ready(function () {
-                $("#wrap").keyup(function () {
-                    var k = $(this).val();
-                })
-            })
+      function makeCard(lecture_image, lecture_name, lecturer_name, owner_short_comment) {
+        let tempHtml = `
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <img class="card-img-top" src="${lecture_image}" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${lecture_name} "(${lecturer_name})"</h5>
+                                    <h6 class="card-text" font-size : 10px>"방지기 한마디 : " ${owner_short_comment}</h6>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
+                                        data-target="#exampleModal"
+                                        data-whatever="@mdo">방 탐색하기
+                                </button>
+                            </div>
+                        </div>`;
 
-            function showModal() {
-                $('#exampleModal').on('show.bs.modal', function (event) {
-                    var button = $(event.relatedTarget) // Button that triggered the modal
-                    var recipient = button.data('whatever') // Extract info from data-* attributes
-                    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                    var modal = $(this)
-                    modal.find('.modal-title').text('New message to ' + recipient)
-                    modal.find('.modal-body input').val(recipient)
-                })
+        return tempHtml;
+      }
+
+      function enter_new_room() {
+        let purchase_proof = $("#purchase_proof").val();
+        let participant_long_comment = $("#participant_long_comment").val();
+
+        if (purchase_proof == "") {
+          alert("수강 내역 인증 파일을 첨부해주세요!");
+          $("#purchase_proof").focus();
+          return;
+        } else if (participant_long_comment == "") {
+          alert("다짐글을 입력해주세요!");
+          $("#participant_long_comment").focus();
+        }
+        $.ajax({
+          type: "POST",
+          url: "/enternewroom",
+          data: {
+            'purchase_proof_give': purchase_proof,
+            'participant_long_comment_give': participant_long_comment
+          },
+          success: function (response) {
+            if (response["result"] == "success") {
+              alert(response["msg"]);
             }
-        </script>
-    </head>
+          }
+        });
+      }
+    </script>
+</head>
 
-    <body>
-        <div class="wrap">
-            <div class="container">
-                <header>
-                    Online but Offline
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="/">홈</a></li>
-                            <li><a href="/makver">방 만들기</a></li>
-                            <li><a href="/searchver">방 찾기</a></li>
-                            <li><a href="/">참여방 보기</a></li>
-                            <li><a href="/">로그인</a></li>
-                            <li><a href="/">로그아웃</a></li>
-                        </ul>
-                    </nav>
-                </header>
-            </div>
-            <div class="img1"></div>
-            <p></p>
-            <div class="introduction">
-                <br>
-                <p>
-                    같은 <strong>온라인</strong> 강의를 듣고 있는 <strong>오프라인</strong> 친구들을 찾아보세요!
-                </p>
-            </div>
-            <p></p>
-            <!--            <div class="button">-->
-            <!--                <button onclick="openClose()" class="btn btn-dark btn-lg">방 찾기</button>-->
-            <!--            </div>-->
-            <!--            <br>-->
-            <!--            <div class="btn-post-box" id="btn-post-box" style="display:none">-->
-            <!--                <div class="input-group mb-3">-->
-            <!--                    <input type="text" class="form-control" placeholder="강의 제목 / 강사 성함을 입력해주세요!"-->
-            <!--                           aria-label="Recipient's username" aria-describedby="button-addon2">-->
-            <!--                    <div class="input-group-append">-->
-            <!--                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색하기</button>-->
-            <!--                    </div>-->
-            <!--                </div>-->
-            <!--            </div>-->
-            <br>
-            <div class="lectures">
-                <div id="cards-box" class="card-columns">
+<body>
+<div class="wrap">
+    <div class="container">
+        <header>
+            Online but Offline
+            <nav class="menu">
+                <ul>
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/makver">방 만들기</a></li>
+                    <li><a href="/searchver">방 찾기</a></li>
+                    <li><a href="/">참여방 보기</a></li>
+                    <li><a href="/">로그인</a></li>
+                    <li><a href="/">로그아웃</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="img1"></div>
+    <p></p>
+    <div class="introduction">
+        <br>
+        <p>
+            같은 <strong>온라인</strong> 강의를 듣고 있는 <strong>오프라인</strong> 친구들을 찾아보세요!
+        </p>
+    </div>
+    <p></p>
+    <!--            <div class="button">-->
+    <!--                <button onclick="openClose()" class="btn btn-dark btn-lg">방 찾기</button>-->
+    <!--            </div>-->
+    <!--            <br>-->
+    <!--            <div class="btn-post-box" id="btn-post-box" style="display:none">-->
+    <!--                <div class="input-group mb-3">-->
+    <!--                    <input type="text" class="form-control" placeholder="강의 제목 / 강사 성함을 입력해주세요!"-->
+    <!--                           aria-label="Recipient's username" aria-describedby="button-addon2">-->
+    <!--                    <div class="input-group-append">-->
+    <!--                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색하기</button>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <br>
+    <div class="lectures">
+        <div id="cards-box" class="card-columns">
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://i.pinimg.com/originals/fc/ac/77/fcac77d80eb13abd85b54b33036e10de.png"
                              class="card-img-top" alt="...">
@@ -272,7 +375,8 @@
                                 data-whatever="@mdo">방 탐색하기
                         </button>
                     </div>
-
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://gscdn.hackers.co.kr/ecpa/img/exam_guide/type2/img_tab_9_1.jpg"
                              class="card-img-top" alt="...">
@@ -285,11 +389,14 @@
                                 data-whatever="@mdo">방 탐색하기
                         </button>
                     </div>
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/china_dangicokr/img/promotion/miracle_in14days/20190122/img_letter.png"
                              class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)</h5>
+                            <h5 class="card-title">[커넥츠][중단기]<br>[新 HSK5급] 30시간만에 끝내는 新 HSK 5급 벼락치기(남미숙 선생님)
+                            </h5>
                             <h6 class="card-text" font-size : 10px>방지기 한마디 : "올해는 꼭 중국어 정복!"</h6>
                         </div>
                         <button type="button" class="btn btn-outline-secondary" data-toggle="modal"
@@ -297,6 +404,10 @@
                                 data-whatever="@mdo">방 탐색하기
                         </button>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://s3.ap-northeast-2.amazonaws.com/st.dangidata/billing/course/image/103624_20190812122613493.jpg"
                              class="card-img-top" alt="...">
@@ -309,7 +420,8 @@
                                 data-whatever="@mdo">방 탐색하기
                         </button>
                     </div>
-
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="https://cdn.class101.net/images/0aa92fbb-3afd-43d6-9746-b8bc5f2221f9/2048xauto.webp"
                              class="card-img-top" alt="...">
@@ -322,7 +434,8 @@
                                 data-whatever="@mdo">방 탐색하기
                         </button>
                     </div>
-
+                </div>
+                <div class="col-sm-4">
                     <div class="card">
                         <img src="http://image.ebsi.co.kr/images/teacher_new/2020/home/T0089.png"
                              class="card-img-top" alt="...">
@@ -337,44 +450,83 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
+<!--                    data-whatever="@fat">Open modal for @fat-->
+<!--            </button>-->
+<!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
+<!--                    data-whatever="@getbootstrap">Open modal for @getbootstrap-->
+<!--            </button>-->
 
-
-            <!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
-            <!--                    data-whatever="@fat">Open modal for @fat-->
-            <!--            </button>-->
-            <!--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
-            <!--                    data-whatever="@getbootstrap">Open modal for @getbootstrap-->
-            <!--            </button>-->
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Online but Offline</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="purchase_proof" class="col-form-label">강의 구매 내역 인증하기</label>
-                                    <input type="text" class="form-control" id="purchase_proof">
-                                </div>
-                                <div class="form-group">
-                                    <label for="message-text" class="col-form-label">다짐글 한마디</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Online but Offline</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--                        강의 정보 -->
+                <div class="lecture_card">
+                    <img class="card-img-top" src="${lecture_image}">
+                    <div class="card-body">
+                        <form>
+                            <div class="lecture_long_intro" style="font-size : 1.5em"><strong>강의 상세
+                                내용 보기</strong>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td>강의 제목 : "${lecture_name}"</td>
+                                </tr>
+                                <tr>
+                                    <td>강사 성함 : "${lecturer_name}"</td>
+                                </tr>
+                                <tr>
+                                    <td>희망 수강 인원 : "${mate_number}"</td>
+                                </tr>
+                                <tr>
+                                    <td>방지기의 한 마디 : "${owner_short_comment}"</td>
+                                </tr>
+                                <tr>
+                                    <td>소개 및 다짐글 : "${owner_long_comment}"</td>
+                                </tr>
+                            </table>
+                        </form>
+                        <br>
+                        <!--                        강의 구매 인증 및 한 마디 첨부-->
+                        <form>
+                            <div class="form-group">
+                                <label for="purchase_proof" class="col-form-label"
+                                       style="font-size : 1.5em"><strong>강의 구매 내역
+                                    인증하기</strong></label>
+                                <br>
+                                <div class style="font-size : 0em"> 강의 구매 영수증이나 강의 구매 내역을 캡처하여 첨부해주세요!"</div>
+                                <input type="file" class="form-control-file" id="purchase_proof">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="participant_long_comment" class="col-form-label"
+                                       style="font-size: 1.5em"><strong>다짐글
+                                    한마디</strong></label>
+                                <textarea class="form-control" id="participant_long_comment"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-primary" onclick="enter_new_room()">신청하기</button>
+                        <div class="button">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>
