@@ -1,7 +1,11 @@
-from flask import Flask, render_template, jsonify, request
+from html import escape
+
+from bson import ObjectId
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 from pymongo import MongoClient  # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
 
 app = Flask(__name__)
+app.secret_key = "ABCDEFG"
 
 client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
 db = client.dbsparta  # 'dbsparta'라는 이름의 db를 만듭니다.
@@ -10,17 +14,43 @@ db = client.dbsparta  # 'dbsparta'라는 이름의 db를 만듭니다.
 ## HTML을 주는 부분
 @app.route('/')
 def home():
-    return render_template('obo_project.html')
+    # login_user = ""
+    # if "username" in session:
+    #     print("로그인 되어 있습니다.")
+    #     login_user =
+    # else:
+    #     print("XX 로그아웃 되어 있습니다.")
+    return render_template('obo_project.html', login_user=session["username"])
 
 
 @app.route('/makver')
 def makver():
-    return render_template('obo_project(makver)2.html')
+    return render_template('obo_project(makver)2.html', login_user=session["username"])
 
 
 @app.route('/searchver')
 def searchver():
-    return render_template('obo_project(searchver).html')
+    return render_template('obo_project(searchver).html', login_user=session["username"])
+
+@app.route('/register', methods=['GET'])
+def register():
+    return render_template('obo_project_register.html', login_user=session["username"])
+
+@app.route('/login', methods=['GET'])
+def login():
+    return render_template('obo_project_login.html', login_user=session["username"])
+
+@app.route('/login_user', methods=['GET'])
+def login_user():
+    login_id = "doa01165@naver.com"
+    session["username"] = login_id
+    # return escape(session["username"])
+    return redirect(url_for('home'))
+
+@app.route('/logout', methods=['GET'])
+def logout_user():
+    session.pop("username", None)
+    return redirect(url_for('home'))
 
 
 @app.route('/makenewroom', methods=['POST'])
